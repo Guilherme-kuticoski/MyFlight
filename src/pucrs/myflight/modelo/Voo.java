@@ -22,6 +22,10 @@ public class Voo {
 	public Voo(Rota rota, LocalDateTime datahora, Duration duracao) {
 		this(rota, datahora, duracao, Status.CONFIRMADO);
 	}
+
+	public Voo(Rota rota, Duration duracao) {
+		this(rota, LocalDateTime.of(2016, 8, 12, 12, 0), duracao, Status.CONFIRMADO);
+	}
 	
 	public Rota getRota() {
 		return rota;

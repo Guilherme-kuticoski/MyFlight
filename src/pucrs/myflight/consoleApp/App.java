@@ -41,8 +41,16 @@ public class App {
 		Voo voo3 = new Voo(rota3, datahora2, duracao2, Status.CANCELADO);
 
 		Voo voo4 = new Voo(rota4, datahora2, duracao1);
-		Voo voo5 = new Voo(rota5, datahora1, duracao2);
+		Voo voo5 = new Voo(rota5, duracao2);
 
 		voo4.setStatus(Status.CANCELADO);
+
+		double dis = Geo.distancia(poa.getLocal(), lis.getLocal());
+		System.out.println(dis);
+
+		Geo geoPoa = new Geo(-29.9939, -51.1711);
+		System.out.println(geoPoa.distancia(lis.getLocal()));
+	
+		System.out.println("\n\nTotal de empresas: " + CiaAerea.getTotalCias());
 	}
 }
