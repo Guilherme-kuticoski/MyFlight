@@ -8,4 +8,22 @@ public class GerenciadorAeroportos {
 	public GerenciadorAeroportos() {
 		aeroportos = new ArrayList<>();
 	}
+
+	public void adicionar(Aeroporto aero){
+		aeroportos.add(aero);
+	}
+
+	public ArrayList<Aeroporto> listarTodos() {
+		return aeroportos;
+	}
+
+	public Aeroporto busarPorCodigo(String cod) {
+		for(Aeroporto aero : aeroportos){
+			if (cod.equals(aero.getCodigo())){
+				return aero;
+			}
+		}
+
+		return null;
+	}
 }

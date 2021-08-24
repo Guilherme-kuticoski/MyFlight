@@ -8,4 +8,22 @@ public class GerenciadorAeronaves {
 	public GerenciadorAeronaves() {
 		aeronaves = new ArrayList<>();
 	}
+
+	public void adicionar(Aeronave aviao){
+		aeronaves.add(aviao);
+	}
+
+	public ArrayList<Aeronave> listarTodos() {
+		return aeronaves;
+	}
+
+	public Aeronave busarPorCodigo(String cod) {
+		for(Aeronave arnv : aeronaves){
+			if (cod.equals(arnv.getCodigo())){
+				return arnv;
+			}
+		}
+
+		return null;
+	}
 }

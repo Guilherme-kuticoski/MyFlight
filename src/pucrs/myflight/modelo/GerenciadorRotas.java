@@ -8,4 +8,22 @@ public class GerenciadorRotas {
 	public GerenciadorRotas() {
 		rotas = new ArrayList<>();
 	}
+
+	public void adicionar(Rota rota){
+		rotas.add(rota);
+	}
+
+	public ArrayList<Rota> listarTodas() {
+		return rotas;
+	}
+
+	public Rota busarPorOrigem(Aeroporto orig) {
+		for(Rota rota : rotas){
+			if (rota.getOrigem() == orig){
+				return rota;
+			}
+		}
+
+		return null;
+	}
 }
