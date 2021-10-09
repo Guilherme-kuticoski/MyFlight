@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public class Voo {
 	
-	public enum Status { CONFIRMADO, ATRASADO, CANCELADO };
+	public enum Status { CONFIRMADO, ATRASADO, CANCELADO }
 	
 	private LocalDateTime datahora;
 	private Duration duracao;
