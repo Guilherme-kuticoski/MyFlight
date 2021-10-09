@@ -51,6 +51,6 @@ public class App {
 		Geo geoPoa = new Geo(-29.9939, -51.1711);
 		System.out.println(geoPoa.distancia(lis.getLocal()));
 	
-		System.out.println("\n\nTotal de aeroma: " + aero4.contar());
+		System.out.println("\n\nTotal de empresas: " + CiaAerea.getTotalCias());
 	}
 }
