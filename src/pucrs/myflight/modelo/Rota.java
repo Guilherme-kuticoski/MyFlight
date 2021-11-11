@@ -32,4 +32,9 @@ public class Rota implements Comparable<Rota> {
 	public Aeronave getAeronave() {
 		return aeronave;
 	}
+
+	@Override
+	public String toString() {
+		return this.origem.getNome() + " -> " + this.getDestino().getNome(); 
+	}
 }

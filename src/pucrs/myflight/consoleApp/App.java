@@ -34,23 +34,14 @@ public class App {
 		Duration duracao1 = Duration.ofMinutes(90);
 		Voo voo1 = new Voo(rota1, datahora1, duracao1, Status.ATRASADO);
 
-		Duration duracao2 = Duration.ofMinutes(120);
-		Voo voo2 = new Voo(rota2, datahora1, duracao1);
+		VooEscalas voo2 = new VooEscalas(rota2, rota4, datahora1, duracao1);
 
-		LocalDateTime datahora2 = LocalDateTime.of(2016, 8, 15, 12, 0);
-		Voo voo3 = new Voo(rota3, datahora2, duracao2, Status.CANCELADO);
+		VooVariasEscalas voo3 = new VooVariasEscalas(rota2, datahora1, duracao1);
+		voo3.adicionarRota(rota4);
+		voo3.adicionarRota(rota5);
 
-		Voo voo4 = new Voo(rota4, datahora2, duracao1);
-		Voo voo5 = new Voo(rota5, duracao2);
-
-		voo4.setStatus(Status.CANCELADO);
-
-		double dis = Geo.distancia(poa.getLocal(), lis.getLocal());
-		System.out.println(dis);
-
-		Geo geoPoa = new Geo(-29.9939, -51.1711);
-		System.out.println(geoPoa.distancia(lis.getLocal()));
-	
-		System.out.println("\n\nTotal de empresas: " + CiaAerea.getTotalCias());
+		System.out.println(voo1);
+		System.out.println(voo2);
+		System.out.println(voo3);
 	}
 }
