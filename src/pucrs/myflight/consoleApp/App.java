@@ -1,10 +1,8 @@
 package pucrs.myflight.consoleApp;
 
 import java.time.LocalDateTime;
-import java.time.Duration;
 
 import pucrs.myflight.modelo.*;
-import pucrs.myflight.modelo.Voo.Status;
 
 public class App {
 
@@ -31,17 +29,18 @@ public class App {
 		Rota rota5 = new Rota(azul, mia, lis, aero2);
 
 		LocalDateTime datahora1 = LocalDateTime.of(2016, 8, 10, 8, 0);
-		Duration duracao1 = Duration.ofMinutes(90);
-		Voo voo1 = new Voo(rota1, datahora1, duracao1, Status.ATRASADO);
+		VooDireto voo1 = new VooDireto(datahora1, rota1);
+		System.out.println("Duração em minutos voo1: " + voo1.getDuracao().getSeconds()/60);
 
-		VooEscalas voo2 = new VooEscalas(rota2, rota4, datahora1, duracao1);
-
-		VooVariasEscalas voo3 = new VooVariasEscalas(rota2, datahora1, duracao1);
-		voo3.adicionarRota(rota4);
-		voo3.adicionarRota(rota5);
-
+		LocalDateTime datahora2 = LocalDateTime.of(2016, 8, 10, 8, 0);
+		VooEscalas voo2 = new VooEscalas(datahora2);
+		voo2.adicionarRota(rota2);
+		voo2.adicionarRota(rota1);
+		voo2.adicionarRota(rota2);
+		voo2.adicionarRota(rota4);
+		
+		System.out.println("Duração em minutos voo2: " + voo2.getDuracao().getSeconds()/60);
 		System.out.println(voo1);
 		System.out.println(voo2);
-		System.out.println(voo3);
 	}
 }

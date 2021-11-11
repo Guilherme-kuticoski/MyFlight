@@ -20,7 +20,7 @@ public class GerenciadorVoos {
 
 	public Voo busarPorData(LocalDateTime date) {
 		for(Voo voo : voos){
-			if (voo.getDatahora() == date){
+			if (voo.getDataHora() == date){
 				return voo;
 			}
 		}
